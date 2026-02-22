@@ -61,5 +61,33 @@
       </div>
     </header>
     <div class="container mx-auto px-4 text-[#E6E7E9] pb-[30px]"><hr></div>
+    <!--Job count-->
+    <div class="container mx-auto flex justify-between items-center px-4 pb-[26px]">
+        <h4 class="text-[#002C5C] text-xl font-semibold">Available Jobs</h4>
+        <p class="text-[#64748B] text-base font-medium">8 jobs</p>
+    </div>
+
+    <!--Job buttons-->
+    <section class="container mx-auto px-4 pb-4">
+        <div>
+            <button class="btn btn-info text-white px-[32px]">All</button>
+            <button class="btn text-gray-500 bg-white">Interview</button>
+            <button class="btn text-gray-500 bg-white">Rejected</button>
+
+        </div>
+    </section>
+
+    <!--No Jobs Section-->
+    <section class="container mx-auto px-4 pb-[133px] hidden">
+        <div class="card bg-base-100 w-full shadow-sm">
+          <div class="card-body mx-auto text-center items-center py-[111px]">
+            <div class="w-[100px] h-[100px]">
+                <img src="./images/jobs.png">
+            </div>
+            <h3 class="text-[#002C5C] text-2xl font-semibold">No jobs available</h3>
+            <p class="text-[#64748B] text-base">Check back soon for new job opportunities</p>
+          </div>
+        </div>
+    </section>
   </body>
 </html>
