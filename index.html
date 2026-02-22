@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Tracker</title>
+
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- DaisyUI + Tailwind css-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      * {
+        font-family: "Geist", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F8FAFC]">
+    <header class="container mx-auto px-4 pb-[30px]">
+      <h2 class="text-3xl font-bold text-[#002C5C] mb-[20px] pt-[60px]">
+        Job Application Tracker
+      </h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <!--Total Jobs-->
+        <div class="card bg-base-100 w-full shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title text-[#323B49] text-sm font-medium">Total</h2>
+            <p class="text-[#002C5C] text-2xl font-bold">8</p>
+          </div>
+        </div>
+        <!--Interview-->
+        <div class="card bg-base-100 w-full shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title text-[#323B49] text-sm font-medium">
+              Interview
+            </h2>
+            <p class="text-[#10B981] text-2xl font-bold">0</p>
+          </div>
+        </div>
+        <!--Rejected-->
+        <div class="card bg-base-100 w-full shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title text-[#323B49] text-sm font-medium">
+              Rejected
+            </h2>
+            <p class="text-[#EF4444] text-2xl font-bold">0</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container mx-auto px-4 text-[#E6E7E9] pb-[30px]"><hr></div>
+  </body>
+</html>
