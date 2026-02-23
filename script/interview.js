@@ -10,6 +10,7 @@ for(let button of interviewButtons){
     });
 }
 document.getElementById("interview-btn").addEventListener("click", function(){
+    interviewBtnFocus("interview-btn");
     const jobCards = document.getElementById("jobCardContainer");
     jobCards.classList.add("hidden");
     if(interview.length === 0){
