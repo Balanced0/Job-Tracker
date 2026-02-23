@@ -49,7 +49,7 @@
             <h2 class="card-title text-[#323B49] text-sm font-medium">
               Interview
             </h2>
-            <p class="text-[#10B981] text-2xl font-bold">0</p>
+            <p id="total-interview" class="text-[#10B981] text-2xl font-bold">0</p>
           </div>
         </div>
         <!--Rejected-->
@@ -58,7 +58,7 @@
             <h2 class="card-title text-[#323B49] text-sm font-medium">
               Rejected
             </h2>
-            <p class="text-[#EF4444] text-2xl font-bold">0</p>
+            <p id="total-rejected" class="text-[#EF4444] text-2xl font-bold">0</p>
           </div>
         </div>
       </div>
@@ -67,16 +67,15 @@
     <!--Job count-->
     <div class="container mx-auto flex justify-between items-center px-4 pb-[26px]">
         <h4 class="text-[#002C5C] text-xl font-semibold">Available Jobs</h4>
-        <p class="text-[#64748B] text-base font-medium"><span id="available-jobs">8</span> jobs</p>
+        <p id="available-jobs-main" class="text-[#64748B] text-base font-medium"><span id="available-jobs">8</span> jobs</p>
     </div>
 
     <!--Job buttons-->
     <section class="container mx-auto px-4">
         <div>
-            <button class="btn btn-info text-white px-[32px]">All</button>
-            <button class="btn text-gray-500 bg-white">Interview</button>
-            <button class="btn text-gray-500 bg-white">Rejected</button>
-
+            <button id="all-btn" class="btn btn-info text-white px-[32px]">All</button>
+            <button id="interview-btn" class="btn text-gray-500 bg-white">Interview</button>
+            <button id="rejected-btn" class="btn text-gray-500 bg-white">Rejected</button>
         </div>
     </section>
 
@@ -101,7 +100,7 @@
             <p class="text-[#323B49] text-sm mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -125,7 +124,7 @@
             <p class="text-[#323B49] text-sm mb-5">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -149,7 +148,7 @@
             <p class="text-[#323B49] text-sm mb-5">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -173,7 +172,7 @@
             <p class="text-[#323B49] text-sm mb-5">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -197,7 +196,7 @@
             <p class="text-[#323B49] text-sm mb-5">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -221,7 +220,7 @@
             <p class="text-[#323B49] text-sm mb-5">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -245,7 +244,7 @@
             <p class="text-[#323B49] text-sm mb-5">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -269,7 +268,7 @@
             <p class="text-[#323B49] text-sm mb-5">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
             <!--Buttons-->
             <div class="flex gap-2">
-                <button class="btn btn-outline btn-success">Interview</button>
+                <button class="btn btn-outline btn-success interview-btn">Interview</button>
                 <button class="btn btn-outline btn-error">Rejected</button>
             </div>
           </div>
@@ -277,7 +276,7 @@
     </section>
 
     <!--No Jobs Section-->
-    <section id="no-jobs" class="container mx-auto px-4 pb-[133px] hidden">
+    <section id="no-jobs" class="container mx-auto px-4 pb-[133px] pt-4 hidden">
         <div class="card bg-base-100 w-full shadow-sm">
           <div class="card-body mx-auto text-center items-center py-[111px]">
             <div class="w-[100px] h-[100px]">
@@ -289,6 +288,7 @@
         </div>
     </section>
 
+    <script src="./script/interview.js"></script>
     <script src="./script/delete.js"></script>
   </body>
 </html>
