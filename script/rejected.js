@@ -11,10 +11,11 @@ for(let button of rejectedButtons){
             interview.splice(interviewIndex, 1);
             document.getElementById("total-interview").innerText = interview.length;
         }
-        if(!rejected.includes(card)){
-            rejected.push(card);
-            totalRejected.innerText = rejected.length;
+        if(rejected.includes(card)){
+            return;
         }
+        rejected.push(card);
+        totalRejected.innerText = rejected.length;
         if(window.currentWindow === "all"){
             card.classList.remove("hidden");
         } else if(window.currentWindow === "interview"){
@@ -30,6 +31,7 @@ for(let button of rejectedButtons){
 }
 document.getElementById("rejected-btn").addEventListener("click", function(){
     rejectedBtnFocus("rejected-btn");
+    window.currentWindow = "rejected";
     const totalJobs = document.getElementById("total-jobs").innerText;
     const availableJobsMain = document.getElementById("available-jobs-main");
     availableJobsMain.innerText = `${rejected.length} of ${totalJobs} jobs`;
