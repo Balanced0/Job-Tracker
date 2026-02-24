@@ -14,8 +14,9 @@ for(let button of interviewButtons){
             interview.push(card);
             totalInterview.innerText = interview.length;
         }
-        const status = card.querySelector("span");
-        status.outerHTML = `<div class="badge badge-soft badge-xl badge-outline badge-success">Interview</div>`;
+        const status = card.querySelector(".status-badge");
+        status.innerText = "INTERVIEW";
+        status.className = "status-badge badge badge-soft badge-xl badge-outline badge-success";
 
         updateCounters();
     });

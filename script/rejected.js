@@ -14,8 +14,9 @@ for(let button of rejectedButtons){
             rejected.push(card);
             totalRejected.innerText = rejected.length;
         }
-        const status = card.querySelector("span");
-        status.outerHTML = `<div class="badge badge-soft badge-xl badge-outline badge-error">Rejected</div>`;
+        const status = card.querySelector(".status-badge");
+        status.innerText = "REJECTED";
+        status.className = "status-badge badge badge-soft badge-xl badge-outline badge-error";
         updateCounter();
     });
 }
