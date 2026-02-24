@@ -5,13 +5,18 @@ let currentTotalRejected = Number(totalRejected.innerText);
 for(let button of rejectedButtons){
     button.addEventListener("click", function(){
         const card = this.closest(".card");
+        const interviewIndex = interview.indexOf(card);
+        if(interviewIndex !== -1){
+            interview.splice(interviewIndex, 1);
+            document.getElementById("total-interview").innerText = interview.length;
+        }
+        if(!rejected.includes(card)){
+            rejected.push(card);
+            totalRejected.innerText = rejected.length;
+        }
         const status = card.querySelector("span");
         status.outerHTML = `<div class="badge badge-soft badge-xl badge-outline badge-error">Rejected</div>`;
-        if(!rejected.includes(card)){
-            currentTotalRejected++;
-            totalRejected.innerText = currentTotalRejected;
-            rejected.push(card);
-        }
+        updateCounter();
     });
 }
 document.getElementById("rejected-btn").addEventListener("click", function(){

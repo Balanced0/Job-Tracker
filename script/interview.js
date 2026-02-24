@@ -5,13 +5,19 @@ let currentTotalInterview = Number(totalInterview.innerText);
 for(let button of interviewButtons){
     button.addEventListener("click", function(){
         const card = this.closest(".card");
+        const rejectedIndex = rejected.indexOf(card);
+        if(rejectedIndex !== -1){
+            rejected.splice(rejectedIndex, 1);
+            document.getElementById("total-rejected").innerText = rejected.length;
+        }
+        if(!interview.includes(card)){
+            interview.push(card);
+            totalInterview.innerText = interview.length;
+        }
         const status = card.querySelector("span");
         status.outerHTML = `<div class="badge badge-soft badge-xl badge-outline badge-success">Interview</div>`;
-        if(!interview.includes(card)){
-            currentTotalInterview++;
-            totalInterview.innerText = currentTotalInterview;
-            interview.push(card);
-        }
+
+        updateCounters();
     });
 }
 document.getElementById("interview-btn").addEventListener("click", function(){
