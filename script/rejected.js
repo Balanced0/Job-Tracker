@@ -1,5 +1,5 @@
 window.rejected = [];
-window.currentWindow = "rejected";
+
 const rejectedButtons = document.querySelectorAll(".rejected-btn");
 const totalRejected = document.getElementById("total-rejected");
 let currentTotalRejected = Number(totalRejected.innerText);
@@ -16,11 +16,7 @@ for(let button of rejectedButtons){
         }
         rejected.push(card);
         totalRejected.innerText = rejected.length;
-        if(window.currentWindow === "all"){
-            card.classList.remove("hidden");
-        } else if(window.currentWindow === "interview"){
-            card.classList.remove("hidden");
-        } else if(window.currentWindow === "rejected"){
+        if(window.currentWindow === "interview"){
             card.classList.add("hidden");
         }
         const status = card.querySelector(".status-badge");

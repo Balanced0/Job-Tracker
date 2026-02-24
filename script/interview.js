@@ -1,5 +1,5 @@
 window.interview = [];
-window.currentWindow = "interview";
+
 const interviewButtons = document.querySelectorAll(".interview-btn");
 const totalInterview = document.getElementById("total-interview");
 let currentTotalInterview = Number(totalInterview.innerText);
@@ -7,19 +7,16 @@ for(let button of interviewButtons){
     button.addEventListener("click", function(){
         const card = this.closest(".card");
         const rejectedIndex = rejected.indexOf(card);
+        if(interview.includes(card)){
+            return;
+        }
         if(rejectedIndex !== -1){
             rejected.splice(rejectedIndex, 1);
             document.getElementById("total-rejected").innerText = rejected.length;
         }
-        if(!interview.includes(card)){
-            interview.push(card);
-            totalInterview.innerText = interview.length;
-        }
-        if(window.currentWindow === "all"){
-            card.classList.remove("hidden");
-        } else if(window.currentWindow === "interview"){
-            card.classList.remove("hidden");
-        } else if(window.currentWindow === "rejected"){
+        interview.push(card);
+        totalInterview.innerText = interview.length;
+        if(window.currentWindow === "rejected"){
             card.classList.add("hidden");
         }
         const status = card.querySelector(".status-badge");
@@ -30,6 +27,7 @@ for(let button of interviewButtons){
 }
 document.getElementById("interview-btn").addEventListener("click", function(){
     interviewBtnFocus("interview-btn");
+    window.currentWindow = "interview";
     const totalJobs = document.getElementById("total-jobs").innerText;
     const availableJobsMain = document.getElementById("available-jobs-main");
     availableJobsMain.innerText = `${interview.length} of ${totalJobs} jobs`;
