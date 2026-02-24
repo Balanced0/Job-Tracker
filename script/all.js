@@ -10,5 +10,9 @@ document.getElementById("all-btn").addEventListener("click", function(){
     const totalJobs = document.getElementById("total-jobs").innerText;
     availableJobsMain.innerText = `${totalJobs} jobs`;
     const noJobsSection = document.getElementById("no-jobs");
-    noJobsSection.classList.add("hidden");
+    if(jobCards.length === 0){
+        noJobsSection.classList.remove("hidden");
+    } else {
+        noJobsSection.classList.add("hidden");
+    }
 });

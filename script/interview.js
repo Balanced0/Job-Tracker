@@ -1,4 +1,5 @@
 window.interview = [];
+window.currentWindow = "interview";
 const interviewButtons = document.querySelectorAll(".interview-btn");
 const totalInterview = document.getElementById("total-interview");
 let currentTotalInterview = Number(totalInterview.innerText);
@@ -14,16 +15,21 @@ for(let button of interviewButtons){
             interview.push(card);
             totalInterview.innerText = interview.length;
         }
+        if(window.currentWindow === "all"){
+            card.classList.remove("hidden");
+        } else if(window.currentWindow === "interview"){
+            card.classList.remove("hidden");
+        } else if(window.currentWindow === "rejected"){
+            card.classList.add("hidden");
+        }
         const status = card.querySelector(".status-badge");
         status.innerText = "INTERVIEW";
         status.className = "status-badge badge badge-soft badge-xl badge-outline badge-success";
-
         updateCounters();
     });
 }
 document.getElementById("interview-btn").addEventListener("click", function(){
     interviewBtnFocus("interview-btn");
-    window.currentWindow = "interview";
     const totalJobs = document.getElementById("total-jobs").innerText;
     const availableJobsMain = document.getElementById("available-jobs-main");
     availableJobsMain.innerText = `${interview.length} of ${totalJobs} jobs`;
