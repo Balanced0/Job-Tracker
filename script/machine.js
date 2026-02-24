@@ -21,3 +21,9 @@ function allBtnFocus(id){
     btnRejected.classList.remove("btn-info", "text-white");
     btnRejected.classList.add("text-gray-500", "bg-white");
 }
+
+function updateCounters() {
+    const totalJobs = document.getElementById("total-jobs").innerText;
+    const availableJobsMain = document.getElementById("available-jobs-main");
+    availableJobsMain.innerText = `${interview.length} of ${totalJobs} jobs`;
+}
