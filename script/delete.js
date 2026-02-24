@@ -11,6 +11,11 @@ for(let card of deleteCard){
             interview.splice(cardIndex, 1);
             document.getElementById("total-interview").innerText = interview.length;
         }
+        if(window.rejected){
+            const cardIndex = rejected.indexOf(this.closest(".card"));
+            rejected.splice(cardIndex, 1);
+            document.getElementById("total-rejected").innerText = rejected.length;
+        }
         jobCard.remove();
         currentAvailableJobs--;
         currentTotalJobs--;

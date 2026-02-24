@@ -16,6 +16,10 @@ for(let button of interviewButtons){
 }
 document.getElementById("interview-btn").addEventListener("click", function(){
     interviewBtnFocus("interview-btn");
+    window.currentWindow = "interview";
+    const totalJobs = document.getElementById("total-jobs").innerText;
+    const availableJobsMain = document.getElementById("available-jobs-main");
+    availableJobsMain.innerText = `${interview.length} of ${totalJobs} jobs`;
     const jobCardContainer = document.getElementById("jobCardContainer");
     const jobCards = jobCardContainer.querySelectorAll(".card");
     for(let card of jobCards){

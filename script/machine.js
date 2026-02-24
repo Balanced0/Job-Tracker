@@ -10,6 +10,18 @@ function interviewBtnFocus(id){
     btnRejected.classList.add("text-gray-500", "bg-white");
 }
 
+function rejectedBtnFocus(id){
+    const btn = document.getElementById(id);
+    btn.classList.add("btn-info", "text-white");
+    btn.classList.remove("text-gray-500", "bg-white");
+    const btnAll = document.getElementById("all-btn");
+    btnAll.classList.remove("btn-info", "text-white");
+    btnAll.classList.add("text-gray-500", "bg-white");
+    const btnInterview = document.getElementById("interview-btn");
+    btnInterview.classList.remove("btn-info", "text-white");
+    btnInterview.classList.add("text-gray-500", "bg-white");
+}
+
 function allBtnFocus(id){
     const btn = document.getElementById(id);
     btn.classList.add("btn-info", "text-white");
@@ -22,8 +34,21 @@ function allBtnFocus(id){
     btnRejected.classList.add("text-gray-500", "bg-white");
 }
 
+window.currentWindow = "all";
 function updateCounters() {
     const totalJobs = document.getElementById("total-jobs").innerText;
     const availableJobsMain = document.getElementById("available-jobs-main");
-    availableJobsMain.innerText = `${interview.length} of ${totalJobs} jobs`;
+    if(window.currentWindow === "all"){
+        availableJobsMain.innerText = `${totalJobs} jobs`;
+    }
+    else if(window.currentWindow === "interview"){
+        availableJobsMain.innerText = `${interview.length} of ${totalJobs} jobs`;
+    }
+    else if(window.currentWindow === "rejected"){
+        availableJobsMain.innerText = `${rejected.length} of ${totalJobs} jobs`;
+    }
+    if(interview.length === 0){
+        const noJobsSection = document.getElementById("no-jobs");
+        noJobsSection.classList.remove("hidden");
+    }
 }
